@@ -1,291 +1,360 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="dark scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DW Marketing e Negócios | Aceleração de Vendas & Performance</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            darknavy: '#0B131F',
-            accentcyan: '#38bdf8',
-            cardbg: '#111C2D'
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sul Dental | Clínica Odontológica & Estética do Sorriso</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darknavy: '#070D18',
+                        navycard: '#0F172A',
+                        brandcyan: '#06B6D4',
+                        brandlight: '#22D3EE',
+                        accentgold: '#F59E0B'
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 
-  <!-- GSAP & ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- GSAP e ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #070D18;
+            color: #F8FAFC;
+        }
+    </style>
 </head>
-<body class="bg-darknavy text-gray-100 font-sans antialiased overflow-x-hidden selection:bg-accentcyan selection:text-black">
+<body class="bg-darknavy text-slate-100 antialiased selection:bg-brandcyan selection:text-white">
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-darknavy/80 backdrop-blur-md border-b border-gray-800/60">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-accentcyan/20 border border-accentcyan flex items-center justify-center font-extrabold text-accentcyan text-sm">
-          DW
-        </div>
-        <span class="text-lg font-bold tracking-wider text-white uppercase">
-          DW <span class="text-xs text-accentcyan block tracking-normal font-normal">Marketing e Negócios</span>
-        </span>
-      </div>
-      <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-        <a href="#solucoes" class="hover:text-accentcyan transition-colors">Ecossistema</a>
-        <a href="#metodologia" class="hover:text-accentcyan transition-colors">Metodologia</a>
-        <a href="#roi" class="hover:text-accentcyan transition-colors">Calculadora ROI</a>
-        <a href="#contato" class="hover:text-accentcyan transition-colors">Contacto</a>
-      </nav>
-      <a href="#contato" class="px-5 py-2.5 rounded-full bg-accentcyan text-darknavy font-bold text-sm hover:bg-sky-400 transition-all shadow-lg shadow-accentcyan/20">
-        Acelerar Negócio
-      </a>
-    </div>
-  </header>
+    <!-- HEADER NAVEGAÇÃO -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-darknavy/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brandcyan to-blue-600 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-brandcyan/20">
+                    S
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white">Sul <span class="text-brandcyan">Dental</span></span>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#tratamentos" class="hover:text-brandcyan transition-colors">Tratamentos</a>
+                <a href="#tecnologia" class="hover:text-brandcyan transition-colors">Tecnologia</a>
+                <a href="#avaliacoes" class="hover:text-brandcyan transition-colors">Avaliações (4.9★)</a>
+                <a href="#agendamento" class="hover:text-brandcyan transition-colors">Contacto</a>
+            </nav>
 
-  <!-- HERO DE SCROLL ESTENDIDO (500vh) -->
-  <div id="hero-scroll-container" class="relative h-[500vh] w-full">
-    <!-- Viewport Fixa (100vh) -->
-    <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
-      
-      <!-- 1. ELEMENTO CANVAS (z-index: 0) -->
-      <canvas id="hero-canvas" class="absolute inset-0 w-full h-full block z-0 object-cover"></canvas>
-
-      <!-- 2. OVERLAYS ANTI-SUMIÇO DE TEXTO (z-index: 10) -->
-      <div class="absolute inset-0 z-10 bg-gradient-to-t from-darknavy via-darknavy/60 to-darknavy/40 pointer-events-none"></div>
-      <div class="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-darknavy/50 to-darknavy pointer-events-none"></div>
-
-      <!-- 3. CONTAINER DE TEXTOS DINÂMICOS (z-index: 20) -->
-      <div class="relative z-20 max-w-4xl mx-auto px-6 text-center w-full">
-        
-        <!-- STEP 1 -->
-        <div id="step-1" class="transition-all duration-300">
-          <span class="inline-block px-4 py-1.5 rounded-full border border-accentcyan/40 text-accentcyan text-xs uppercase tracking-widest mb-4 bg-accentcyan/10">
-            Aceleração Escalonável B2B
-          </span>
-          <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-            Transforme Marketing em Engenharia de Vendas
-          </h1>
-          <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light">
-            Conectamos tráfego, funis de conversão e estratégias de negócios num ecossistema pré-configurado de alta performance.
-          </p>
-        </div>
-
-        <!-- STEP 2 -->
-        <div id="step-2" class="opacity-0 pointer-events-none transition-all duration-300 absolute inset-x-6 top-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
-          <span class="inline-block px-4 py-1.5 rounded-full border border-accentcyan/40 text-accentcyan text-xs uppercase tracking-widest mb-4 bg-accentcyan/10">
-            Mapeamento Macro para Micro
-          </span>
-          <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-            Do Tráfego Bruto à Margem de Lucro
-          </h2>
-          <p class="text-base md:text-lg text-gray-300 max-w-xl font-light">
-            Otimização contínua de cada ponto de contacto para maximizar o LTV e reduzir o Custo de Aquisição (CAC).
-          </p>
-        </div>
-
-        <!-- STEP 3 -->
-        <div id="step-3" class="opacity-0 pointer-events-none transition-all duration-300 absolute inset-x-6 top-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
-          <span class="inline-block px-4 py-1.5 rounded-full border border-accentcyan/40 text-accentcyan text-xs uppercase tracking-widest mb-4 bg-accentcyan/10">
-            Pronto para Escalar?
-          </span>
-          <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-            Escale as Vendas da Sua Empresa
-          </h2>
-          <div class="pt-4">
-            <a href="#contato" class="px-8 py-4 rounded-xl bg-accentcyan text-darknavy font-bold text-lg hover:bg-sky-400 transition-all shadow-xl shadow-accentcyan/30 inline-block pointer-events-auto">
-              Solicitar Sessão Estratégica
+            <a href="https://wa.me/5551999999999" target="_blank" class="px-5 py-2.5 rounded-full bg-brandcyan hover:bg-brandlight text-slate-950 font-bold text-sm shadow-lg shadow-brandcyan/25 transition-all transform hover:scale-105">
+                Agendar Consulta
             </a>
-          </div>
         </div>
+    </header>
 
-      </div>
-    </div>
-  </div>
+    <!-- MÓDULO HERO SCROLLYTELLING (GRUPO A: SIMULADOR DE IMPACTO) -->
+    <section id="hero-scroll-container" class="relative h-[500vh] w-full">
+        <!-- Viewport Fixa -->
+        <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+            
+            <!-- LAYER 0: Canvas da Animação WebP -->
+            <canvas id="hero-canvas" class="absolute inset-0 w-full h-full block z-0 object-cover"></canvas>
 
-  <!-- BENTO GRID DE SOLUÇÕES (ESQUELETO SAAS/TECH) -->
-  <section id="solucoes" class="py-24 bg-darknavy relative z-30 border-t border-gray-800">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">O Ecossistema DW</h2>
-        <p class="text-gray-400 max-w-2xl mx-auto">Soluções integradas para dominância de mercado e crescimento sustentável.</p>
-      </div>
+            <!-- LAYER 10: Overlays Anti-Sumiço de Texto -->
+            <div class="absolute inset-0 z-10 bg-gradient-to-t from-darknavy via-darknavy/50 to-darknavy/40 pointer-events-none"></div>
+            <div class="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-darknavy/60 to-darknavy pointer-events-none"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Card Grande -->
-        <div class="md:col-span-2 bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-accentcyan/50 transition-all">
-          <span class="text-accentcyan text-xs font-bold uppercase tracking-wider">Performance de Tráfego</span>
-          <h3 class="text-2xl font-bold text-white mt-2 mb-4">Mídia Paga & Aquisição de Clientes</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-6">Campanhas hipersegmentadas focadas em geração de leads qualificados e vendas diretas com inteligência de dados.</p>
-          <div class="h-32 bg-darknavy/60 rounded-xl border border-gray-800/80 flex items-center justify-around p-4">
-            <div class="text-center">
-              <div class="text-2xl font-black text-accentcyan">+340%</div>
-              <div class="text-xs text-gray-500">ROI Médio</div>
+            <!-- LAYER 20: Container de Textos Dinâmicos em Scroll -->
+            <div class="relative z-20 max-w-5xl mx-auto px-6 text-center">
+                
+                <!-- STEP 1 -->
+                <div id="step-1" class="transition-all duration-500">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-brandcyan/10 border border-brandcyan/30 text-brandcyan text-xs uppercase tracking-widest font-semibold mb-4">
+                        Tecnologia Odontológica Avançada
+                    </span>
+                    <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                        A transformação do seu sorriso <br><span class="bg-clip-text text-transparent bg-gradient-to-r from-brandcyan via-brandlight to-blue-400">começa com precisão 3D</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-8 font-light">
+                        Restaure a saúde, a estética e a confiança do seu sorriso com tratamentos personalizados e tecnologia de ponta na Sul Dental.
+                    </p>
+                    <p class="text-xs text-brandcyan/80 uppercase tracking-widest font-mono">Role a página para visualizar a transformação ↓</p>
+                </div>
+
+                <!-- STEP 2 (Inicia Oculto) -->
+                <div id="step-2" class="opacity-0 pointer-events-none transition-all duration-500 absolute inset-0 flex flex-col items-center justify-center">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-brandcyan/10 border border-brandcyan/30 text-brandcyan text-xs uppercase tracking-widest font-semibold mb-4">
+                        Precisão & Estética
+                    </span>
+                    <h2 class="text-3xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                        Planeamento digital milimétrico para <br><span class="text-brandcyan">resultados naturais e duradouros</span>
+                    </h2>
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                        Do scanner intraoral à aplicação de lentes e implantes: cada detalhe é desenhado para harmonizar perfeitamente com o seu rosto.
+                    </p>
+                </div>
+
+                <!-- STEP 3 (Inicia Oculto) -->
+                <div id="step-3" class="opacity-0 pointer-events-none transition-all duration-500 absolute inset-0 flex flex-col items-center justify-center">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accentgold/10 border border-accentgold/30 text-accentgold text-xs uppercase tracking-widest font-semibold mb-4">
+                        ★ 4.9 de Avaliação no Google (280+ Clientes)
+                    </span>
+                    <h2 class="text-3xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                        Pronto para transformar <br><span class="text-brandcyan">a sua qualidade de vida?</span>
+                    </h2>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
+                        <a href="https://wa.me/5551999999999" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brandcyan hover:bg-brandlight text-slate-950 font-extrabold text-lg shadow-xl shadow-brandcyan/30 transition-all transform hover:scale-105">
+                            Agendar Avaliação Rápida
+                        </a>
+                        <a href="#tratamentos" class="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-lg transition-all">
+                            Ver Todos os Tratamentos
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            <div class="text-center">
-              <div class="text-2xl font-black text-white">-42%</div>
-              <div class="text-xs text-gray-500">Redução de CAC</div>
+        </div>
+    </section>
+
+    <!-- ESQUELETO DO CORPO (GRUPO B: INSTITUCIONAL DE ALTA AUTORIDADE) -->
+    <main class="relative z-30 bg-darknavy border-t border-slate-800">
+        
+        <!-- SEÇÃO PROVA SOCIAL & AUTORIDADE -->
+        <section class="py-16 bg-navycard/50 border-b border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl font-extrabold text-brandcyan mb-1">4.9 ★</div>
+                        <div class="text-sm text-slate-400">Classificação Google (280+ avaliações)</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-extrabold text-white mb-1">+10.000</div>
+                        <div class="text-sm text-slate-400">Pacientes Atendidos na Região</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-extrabold text-brandcyan mb-1">100%</div>
+                        <div class="text-sm text-slate-400">Planeamento Digital 3D</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-extrabold text-white mb-1">Atendimento</div>
+                        <div class="text-sm text-slate-400">Humanizado e Sem Dor</div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
+        </section>
 
-        <!-- Card Menor -->
-        <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-accentcyan/50 transition-all">
-          <span class="text-accentcyan text-xs font-bold uppercase tracking-wider">Branding</span>
-          <h3 class="text-xl font-bold text-white mt-2 mb-4">Posicionamento de Autoridade</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Construção de marca e identidade visual com foco em conversão e diferenciação de mercado.</p>
-        </div>
+        <!-- SEÇÃO TRATAMENTOS DE ALTA PERFORMANCE -->
+        <section id="tratamentos" class="py-24 max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Especialidades Sul Dental</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Soluções completas para a saúde oral e harmonização do sorriso com equipamentos modernos.</p>
+            </div>
 
-        <!-- Card 3 -->
-        <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-accentcyan/50 transition-all">
-          <span class="text-accentcyan text-xs font-bold uppercase tracking-wider">Arquitetura Web</span>
-          <h3 class="text-xl font-bold text-white mt-2 mb-4">Funis & CRO Scrollytelling</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Páginas de altíssima conversão projetadas com engenharia de movimento e resposta rápida.</p>
-        </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-navycard border border-slate-800 hover:border-brandcyan/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-brandcyan/10 border border-brandcyan/20 flex items-center justify-center text-brandcyan mb-6 group-hover:bg-brandcyan group-hover:text-slate-950 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Implantes & Carga Imediata</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Recupere a mastigação e a estética do sorriso com técnicas guiadas de menor impacto e recuperação rápida.</p>
+                    <a href="https://wa.me/5551999999999" class="text-brandcyan text-sm font-semibold hover:underline inline-flex items-center">Saber mais →</a>
+                </div>
 
-        <!-- Card 4 Grande -->
-        <div class="md:col-span-2 bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-accentcyan/50 transition-all">
-          <span class="text-accentcyan text-xs font-bold uppercase tracking-wider">Inteligência Comercial</span>
-          <h3 class="text-2xl font-bold text-white mt-2 mb-4">Aceleração de Vendas & CRM</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Estruturação do processo comercial de ponta a ponta para fechar leads com previsibilidade.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-navycard border border-slate-800 hover:border-brandcyan/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-brandcyan/10 border border-brandcyan/20 flex items-center justify-center text-brandcyan mb-6 group-hover:bg-brandcyan group-hover:text-slate-950 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Lentes de Contacto & Facetas</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Corrija formato, cor e pequenos desalinhamentos dentários com lâminas ultra-finas de cerâmica de alta resistência.</p>
+                    <a href="https://wa.me/5551999999999" class="text-brandcyan text-sm font-semibold hover:underline inline-flex items-center">Saber mais →</a>
+                </div>
 
-  <!-- FORMULÁRIO DE CONTATO -->
-  <section id="contato" class="py-24 bg-darknavy border-t border-gray-800">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-white mb-3">Agende um Diagnóstico Comercial</h2>
-        <p class="text-gray-400 text-sm">Descubra o potencial de aceleração do seu negócio com a DW.</p>
-      </div>
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-navycard border border-slate-800 hover:border-brandcyan/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-brandcyan/10 border border-brandcyan/20 flex items-center justify-center text-brandcyan mb-6 group-hover:bg-brandcyan group-hover:text-slate-950 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Ortodontia & Alinhadores</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Alinhamento dentário discreto e confortável com aparelhos estéticos e placas alinhadoras transparentes.</p>
+                    <a href="https://wa.me/5551999999999" class="text-brandcyan text-sm font-semibold hover:underline inline-flex items-center">Saber mais →</a>
+                </div>
+            </div>
+        </section>
 
-      <form class="space-y-6 bg-cardbg p-8 rounded-2xl border border-gray-800" onsubmit="event.preventDefault();">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label class="block text-xs font-medium text-gray-300 mb-2">Nome Completo</label>
-            <input type="text" class="w-full bg-darknavy border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accentcyan text-sm" placeholder="Seu nome" />
-          </div>
-          <div>
-            <label class="block text-xs font-medium text-gray-300 mb-2">E-mail Corporativo</label>
-            <input type="email" class="w-full bg-darknavy border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accentcyan text-sm" placeholder="seu@empresa.com" />
-          </div>
-        </div>
-        <div>
-          <label class="block text-xs font-medium text-gray-300 mb-2">Faturamento Mensal da Empresa</label>
-          <select class="w-full bg-darknavy border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accentcyan text-sm">
-            <option>Até R$ 50 mil/mês</option>
-            <option>R$ 50 mil a R$ 200 mil/mês</option>
-            <option>Acima de R$ 200 mil/mês</option>
-          </select>
-        </div>
-        <button type="submit" class="w-full py-4 bg-accentcyan text-darknavy font-bold rounded-lg hover:bg-sky-400 transition-all text-center shadow-lg shadow-accentcyan/20">
-          Receber Diagnóstico Gratuito
-        </button>
-      </form>
-    </div>
-  </section>
+        <!-- SEÇÃO FORMULÁRIO DE QUALIFICAÇÃO / AGENDAMENTO -->
+        <section id="agendamento" class="py-24 bg-navycard/40 border-t border-slate-800">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="bg-navycard p-8 md:p-12 rounded-3xl border border-slate-800 shadow-2xl">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-2">Agende a sua Avaliação Clínica</h2>
+                        <p class="text-slate-400 text-sm">Preencha os dados abaixo e a nossa equipa entrará em contacto para confirmar o seu horário.</p>
+                    </div>
 
-  <!-- FOOTER -->
-  <footer class="py-12 bg-black/40 border-t border-gray-900 text-xs text-gray-500 text-center">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div>© DW Marketing e Negócios. Todos os direitos reservados.</div>
-      <div>Estratégia, Performance e Aceleração de Vendas.</div>
-    </div>
-  </footer>
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Solicitação enviada com sucesso! Entraremos em contacto.');">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Nome Completo</label>
+                                <input type="text" required placeholder="Seu nome" class="w-full px-4 py-3 rounded-xl bg-darknavy border border-slate-700 text-white focus:outline-none focus:border-brandcyan transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Telefone / WhatsApp</label>
+                                <input type="tel" required placeholder="(51) 99999-9999" class="w-full px-4 py-3 rounded-xl bg-darknavy border border-slate-700 text-white focus:outline-none focus:border-brandcyan transition-colors">
+                            </div>
+                        </div>
 
-  <!-- SCRIPT ENGINE GSAP + CANVAS FALLBACK -->
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Tratamento de Interesse</label>
+                            <select class="w-full px-4 py-3 rounded-xl bg-darknavy border border-slate-700 text-white focus:outline-none focus:border-brandcyan transition-colors">
+                                <option>Implantes Dentários</option>
+                                <option>Lentes de Contacto / Estética</option>
+                                <option>Aparelho / Alinhadores</option>
+                                <option>Limpeza / Check-up Geral</option>
+                                <option>Outros Procedimentos</option>
+                            </select>
+                        </div>
 
-    const canvas = document.getElementById("hero-canvas");
-    const ctx = canvas.getContext("2d");
+                        <button type="submit" class="w-full py-4 rounded-xl bg-brandcyan hover:bg-brandlight text-slate-950 font-extrabold text-base shadow-lg shadow-brandcyan/20 transition-all">
+                            Confirmar Solicitação de Agendamento
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      renderFallback();
-    }
-    window.addEventListener("resize", resizeCanvas);
+        <!-- FOOTER INSTITUCIONAL -->
+        <footer class="py-12 border-t border-slate-800 text-center text-slate-500 text-sm">
+            <div class="max-w-7xl mx-auto px-6">
+                <p>© 2026 Sul Dental - Clínica Odontológica. Todos os direitos reservados.</p>
+                <p class="mt-2 text-xs text-slate-600">Atendimento de alta autoridade e saúde oral na região.</p>
+            </div>
+        </footer>
 
-    const frameCount = 60;
-    const currentFrame = { frame: 0 };
-    const images = [];
-    let imagesLoaded = 0;
+    </main>
 
-    function renderFallback() {
-      const progress = currentFrame.frame / (frameCount - 1);
-      const width = canvas.width;
-      const height = canvas.height;
+    <!-- ENGINE JAVASCRIPT GSAP & CANVAS FALLBACK -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
 
-      ctx.clearRect(0, 0, width, height);
+        const canvas = document.getElementById("hero-canvas");
+        const context = canvas.getContext("2d");
 
-      const grad = ctx.createRadialGradient(
-        width / 2, height / 2, 50,
-        width / 2, height / 2, width * 0.8
-      );
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-      const cyanIntensity = Math.floor(189 * progress);
-      grad.addColorStop(0, `rgba(11, ${19 + Math.floor(100 * progress)}, ${31 + cyanIntensity}, 1)`);
-      grad.addColorStop(1, '#0B131F');
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            renderFallback();
+        });
 
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, width, height);
-    }
+        // Configuração de Frames e Pré-carregamento
+        const frameCount = 240;
+        const currentFrame = index => `./frames/frame-${(index + 1).toString().padStart(4, '0')}.webp`;
 
-    for (let i = 1; i <= frameCount; i++) {
-      const img = new Image();
-      const frameIndex = String(i).padStart(4, '0');
-      img.src = `./frames/frame-${frameIndex}.webp`;
-      img.onload = () => { imagesLoaded++; };
-      images.push(img);
-    }
+        const images = [];
+        const sequence = { frame: 0 };
 
-    function render() {
-      if (imagesLoaded === frameCount && images[Math.floor(currentFrame.frame)].complete) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(images[Math.floor(currentFrame.frame)], 0, 0, canvas.width, canvas.height);
-      } else {
-        renderFallback();
-      }
-    }
+        let imagesLoaded = 0;
 
-    resizeCanvas();
+        for (let i = 0; i < frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            img.onload = () => {
+                imagesLoaded++;
+            };
+            images.push(img);
+        }
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#hero-scroll-container",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.5,
-      }
-    });
+        // Fallback dinâmico em JS Canvas caso os arquivos WebP não estejam presentes no servidor
+        function renderFallback() {
+            const progress = sequence.frame / (frameCount - 1);
+            const width = canvas.width;
+            const height = canvas.height;
 
-    // 1. Animação da Sequência de Frames até ao fim
-    tl.to(currentFrame, {
-      frame: frameCount - 1,
-      snap: "frame",
-      ease: "none",
-      onUpdate: render
-    }, 0);
+            // Fundo dinâmico
+            const gradient = context.createRadialGradient(width / 2, height / 2, 50, width / 2, height / 2, width / 1.2);
+            gradient.addColorStop(0, '#0F2B3C');
+            gradient.addColorStop(0.5, '#0B1726');
+            gradient.addColorStop(1, '#070D18');
 
-    // 2. Transições de Texto com espaçamento otimizado para evitar saltos
-    tl.to("#step-1", { opacity: 0, y: -30, duration: 0.15 }, 0.15);
-    
-    tl.to("#step-2", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.15 }, 0.30);
-    tl.to("#step-2", { opacity: 0, y: -30, pointerEvents: "none", duration: 0.15 }, 0.55);
-    
-    tl.to("#step-3", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.15 }, 0.70);
-    // Deixamos o Step 3 visível até ao final da timeline (1.0), prevenindo o salto abrupto.
-  </script>
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, width, height);
+
+            // Elemento central 3D simulado
+            const radius = 100 + (progress * 40);
+            context.beginPath();
+            context.arc(width / 2, height / 2, radius, 0, Math.PI * 2);
+            context.strokeStyle = `rgba(6, 182, 212, ${0.3 + (progress * 0.7)})`;
+            context.lineWidth = 4 + (progress * 6);
+            context.shadowBlur = 30;
+            context.shadowColor = "#06B6D4";
+            context.stroke();
+            context.shadowBlur = 0;
+        }
+
+        function render() {
+            if (imagesLoaded === frameCount && images[sequence.frame].complete) {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.drawImage(images[sequence.frame], 0, 0, canvas.width, canvas.height);
+            } else {
+                renderFallback();
+            }
+        }
+
+        // Timeline GSAP ScrollTrigger
+        const heroTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#hero-scroll-container",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.5
+            }
+        });
+
+        // Animação dos frames WebP no Canvas
+        heroTimeline.to(sequence, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            onUpdate: render
+        }, 0);
+
+        // Transições de Texto (Step 1 -> Step 2 -> Step 3)
+        heroTimeline.to("#step-1", { opacity: 0, y: -30, duration: 0.2 }, 0.2);
+        
+        heroTimeline.to("#step-2", { 
+            opacity: 1, 
+            y: 0, 
+            pointerEvents: "auto", 
+            duration: 0.2 
+        }, 0.35);
+        heroTimeline.to("#step-2", { opacity: 0, y: -30, duration: 0.2 }, 0.6);
+
+        heroTimeline.to("#step-3", { 
+            opacity: 1, 
+            y: 0, 
+            pointerEvents: "auto", 
+            duration: 0.2 
+        }, 0.75);
+
+        // Renderização Inicial
+        render();
+    </script>
 </body>
 </html>
