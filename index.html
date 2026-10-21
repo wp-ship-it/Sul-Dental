@@ -24,10 +24,10 @@
             </a>
             <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
                 <a href="#sobre" class="hover:text-cyan-400 transition-colors">Sobre</a>
-                <!-- Link destacado para a página do Doutor -->
                 <a href="doutor.html" class="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 px-4 py-2 rounded-full hover:bg-cyan-500/20 transition-all flex items-center gap-2">
                     <i class="fa-solid fa-user-doctor"></i> Quem é o Doutor
                 </a>
+                <a href="#diferenciais" class="hover:text-cyan-400 transition-colors">Diferenciais</a>
                 <a href="#especialidades" class="hover:text-cyan-400 transition-colors">Especialidades</a>
                 <a href="#avaliacoes" class="hover:text-cyan-400 transition-colors">Avaliações (4.9★)</a>
                 <a href="#contacto" class="hover:text-cyan-400 transition-colors">Contacto</a>
@@ -38,7 +38,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION: CINEMA PURO (Opção 1) -->
+    <!-- HERO SECTION: CINEMA PURO -->
     <section class="relative h-[300vh] w-full">
         <div class="sticky top-0 h-screen w-full overflow-hidden">
             <!-- Canvas WebP Sequence -->
@@ -50,36 +50,43 @@
             <!-- Conteúdo de Apoio do Hero (Z-20) -->
             <div class="absolute inset-0 z-20 flex flex-col items-center justify-end pb-20 px-6 text-center">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-md text-cyan-400 text-xs font-semibold mb-4 uppercase tracking-wider">
-                    <i class="fa-solid fa-star text-amber-400"></i> Referência em Cachoeirinha - RS
+                    <i class="fa-solid fa-heart text-cyan-400"></i> Seu Sorriso, Nosso Compromisso!
                 </div>
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white max-w-4xl tracking-tight mb-4">
-                    Sorrisos Transformados com Tecnologia e Precisão
+                    Reabilitação Dentária Funcional, Estética e Humanizada
                 </h1>
                 <p class="text-slate-300 text-lg max-w-2xl mb-8">
-                    Excelência em reabilitação oral, implantes e estética dental avançada. Role para explorar a nossa estrutura.
+                    Atendimento especializado para toda a sua família, da criança ao idoso. Contamos com laboratório de próteses próprio para entregas com máxima precisão.
                 </p>
                 <div class="flex items-center gap-4">
                     <a href="#contacto" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-8 py-3.5 rounded-full transition-all shadow-xl shadow-cyan-500/20">
                         Marcar via WhatsApp
                     </a>
-                    <a href="#especialidades" class="border border-slate-700 hover:border-cyan-500 text-white font-semibold px-8 py-3.5 rounded-full backdrop-blur-md transition-all">
-                        Nossos Tratamentos
+                    <a href="#diferenciais" class="border border-slate-700 hover:border-cyan-500 text-white font-semibold px-8 py-3.5 rounded-full backdrop-blur-md transition-all">
+                        Nossos Diferenciais
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO SOBRE -->
+    <!-- SEÇÃO SOBRE A CLÍNICA -->
     <section id="sobre" class="py-24 px-6 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
+                <span class="text-cyan-400 font-semibold text-xs uppercase tracking-widest block mb-2">Clínica Odontológica em Cachoeirinha</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-                    Compromisso com o seu bem-estar e saúde bucal em Cachoeirinha
+                    Dentistas para todos os membros da sua família
                 </h2>
-                <p class="text-slate-400 leading-relaxed mb-6">
-                    Localizada na Av. Mal. Rondon[cite: 1], a Sul Dental destaca-se pelo atendimento humanizado, rigor científico e infraestrutura de ponta. Cada paciente recebe um plano personalizado para garantir conforto absoluto e resultados duradouros.
+                <p class="text-slate-300 leading-relaxed mb-6">
+                    A Sul Dental é uma clínica odontológica completa que reúne especialistas qualificados para um atendimento humanizado e acolhedor. Cuidamos com carinho e dedicação de todas as gerações, atendendo desde a infância até a melhor idade.
                 </p>
+                
+                <!-- BANNER INTEGRADO - NOSSO COMPROMISSO -->
+                <div class="bg-gradient-to-r from-cyan-950/40 to-slate-900 border-l-4 border-cyan-500 p-4 rounded-r-xl mb-6">
+                    <p class="text-cyan-300 font-semibold text-sm">"Seu Sorriso, Nosso Compromisso!"</p>
+                    <p class="text-slate-400 text-xs mt-1">Ambiente seguro, climatizado e com acessibilidade total para o seu conforto.</p>
+                </div>
 
                 <!-- CARD DE DESTAQUE PARA CONHECER O DOUTOR -->
                 <div class="bg-slate-900/90 border border-cyan-500/40 p-5 rounded-2xl mb-8 flex items-center justify-between shadow-lg shadow-cyan-500/5">
@@ -104,84 +111,138 @@
                     </div>
                     <div class="border-l-2 border-cyan-500 pl-4">
                         <span class="block text-3xl font-extrabold text-white">100%</span>
-                        <span class="text-sm text-slate-400">Foco em Conforto e Tecnologia</span>
+                        <span class="text-sm text-slate-400">Acessível e Climatizado</span>
                     </div>
                 </div>
             </div>
-            <div class="relative h-[400px] rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
-                <div class="absolute inset-0 bg-gradient-to-tr from-cyan-950/40 to-transparent flex items-end p-8">
-                    <div class="backdrop-blur-md bg-slate-950/60 p-6 rounded-xl border border-slate-800 w-full">
-                        <p class="text-sm text-cyan-400 font-semibold mb-1">Localização Privilegiada</p>
-                        <p class="text-white font-medium">Av. Mal. Rondon, 3756 - Sl 02 - Nova Cachoeirinha[cite: 1]</p>
+            <div class="relative h-[420px] rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-tr from-cyan-950/60 to-slate-900/40 flex items-end p-8">
+                    <div class="backdrop-blur-md bg-slate-950/80 p-6 rounded-xl border border-slate-800 w-full space-y-3">
+                        <div class="flex items-center gap-3 text-cyan-400">
+                            <i class="fa-solid fa-wheelchair text-xl"></i>
+                            <span class="text-white font-semibold text-sm">Local com Acessibilidade Plena</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-cyan-400">
+                            <i class="fa-solid fa-snowflake text-xl"></i>
+                            <span class="text-white font-semibold text-sm">Ambiente Seguro e Totalmente Climatizado</span>
+                        </div>
+                        <p class="text-slate-400 text-xs pt-2 border-t border-slate-800">
+                            <i class="fa-solid fa-location-dot text-cyan-400 mr-1"></i> Av. Mal. Rondon, 3756 - Sl 02 - Nova Cachoeirinha, RS[cite: 1]
+                        </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE DIFERENCIAIS (DESTAQUE PARA O LABORATÓRIO PRÓPRIO) -->
+    <section id="diferenciais" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-cyan-400 font-semibold text-xs uppercase tracking-widest block mb-2">Por que escolher a Sul Dental?</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Diferenciais que Elevam o seu Tratamento</h2>
+            <p class="text-slate-400">Unimos tecnologia avançada, especialistas dedicados e estrutura própria para garantir agilidade e excelência.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- DIFERENCIAL 1: LABORATÓRIO DE PRÓTESES PRÓPRIO -->
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-cyan-500/30 p-8 rounded-2xl hover:border-cyan-500 transition-all relative overflow-hidden group shadow-xl">
+                <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-flask-vial"></i>
+                </div>
+                <span class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-3">Grande Diferencial</span>
+                <h3 class="text-xl font-bold text-white mb-3">Laboratório de Próteses Próprio</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    Facilitamos a comunicação direta e contínua entre dentistas e protéticos na confecção de toda e qualquer prótese dentária, garantindo ajustes perfeitos, agilidade superior e qualidade estético-funcional impecável.
+                </p>
+            </div>
+
+            <!-- DIFERENCIAL 2: REABILITAÇÃO DENTÁRIA COMPLETA -->
+            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-cyan-500/50 transition-all group">
+                <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Reabilitação Funcional & Estética</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Devolvemos a mastigação correta, a simetria facial e a confiança ao sorrir com planejamentos modernos adaptados a cada paciente.
+                </p>
+            </div>
+
+            <!-- DIFERENCIAL 3: ATENDIMENTO FAMILIAR & MULTIGERACIONAL -->
+            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-cyan-500/50 transition-all group">
+                <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-people-roof"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Da Criança ao Idoso</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Atendimento multiprofissional com dentistas especializados no cuidado infantil, de adultos e de idosos, promovendo saúde bucal integrada para toda a família num ambiente acolhedor.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- SEÇÃO ESPECIALIDADES -->
-    <section id="especialidades" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="text-3xl font-bold text-white mb-4">Especialidades de Alto Padrão</h2>
-            <p class="text-slate-400">Tratamentos avançados planeados digitalmente para redefinir o seu sorriso.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-cyan-500/50 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-tooth"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Implantes Dentários</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Recupere a função mastigatória e a estética com implantes seguros, osseointegração guiada e materiais de altíssima durabilidade.</p>
+    <section id="especialidades" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Especialidades de Alto Padrão</h2>
+                <p class="text-slate-400">Tratamentos avançados planejados digitalmente para redefinir o seu sorriso.</p>
             </div>
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-cyan-500/50 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-cyan-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Implantes & Próteses</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Confeccionadas com suporte direto do nosso laboratório próprio para máxima precisão, osseointegração e durabilidade.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Lentes de Contato Dental</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Facetas ultrafinas em porcelana para harmonizar o formato, cor e alinhamento dos dentes com naturalidade impecável.</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-cyan-500/50 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-face-smile"></i>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-cyan-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Lentes de Contato Dental</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Facetas ultrafinas em porcelana para harmonizar o formato, cor e alinhamento dos dentes com naturalidade impecável.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Ortodontia Estética</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Alinhadores transparentes e modernos para corrigir o posicionamento dentário com conforto e discrição total.</p>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-cyan-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Ortodontia & Odontopediatria</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Alinhadores modernos e acompanhamento preventivo completo para crianças, jovens e adultos.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- SEÇÃO AVALIAÇÕES -->
-    <section id="avaliacoes" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
-                <div>
-                    <span class="text-cyan-400 font-semibold text-sm uppercase tracking-wider block mb-2">Prova Social Verificada</span>
-                    <h2 class="text-3xl font-bold text-white">O que dizem os nossos pacientes</h2>
-                </div>
-                <div class="mt-4 md:mt-0 flex items-center gap-3 bg-slate-900 border border-slate-800 px-6 py-3 rounded-full">
-                    <div class="text-amber-400 flex gap-1 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="text-white font-bold">4,9 / 5,0</span>
-                    <span class="text-slate-400 text-sm">(282+ avaliações no Google)[cite: 1]</span>
-                </div>
+    <section id="avaliacoes" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div>
+                <span class="text-cyan-400 font-semibold text-sm uppercase tracking-wider block mb-2">Prova Social Verificada</span>
+                <h2 class="text-3xl font-bold text-white">O que dizem os nossos pacientes</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
-                    <div class="text-amber-400 text-xs mb-3 flex gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-300 text-sm mb-4">"Atendimento impecável! Toda a equipe da Sul Dental é extremamente profissional e atenciosa. Recomendo de olhos fechados em Cachoeirinha."</p>
-                    <span class="text-xs font-semibold text-cyan-400">Paciente Verificado Google</span>
+            <div class="mt-4 md:mt-0 flex items-center gap-3 bg-slate-900 border border-slate-800 px-6 py-3 rounded-full">
+                <div class="text-amber-400 flex gap-1 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
-                    <div class="text-amber-400 text-xs mb-3 flex gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-300 text-sm mb-4">"Estrutura moderna, limpa e equipamentos de última geração. Fiz meu tratamento de canal e implante sem dor nenhuma."</p>
-                    <span class="text-xs font-semibold text-cyan-400">Paciente Verificado Google</span>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
-                    <div class="text-amber-400 text-xs mb-3 flex gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-300 text-sm mb-4">"Simplesmente a melhor clínica odontológica da região. Profissionais qualificados e pontualidade exemplar."</p>
-                    <span class="text-xs font-semibold text-cyan-400">Paciente Verificado Google</span>
-                </div>
+                <span class="text-white font-bold">4,9 / 5,0</span>
+                <span class="text-slate-400 text-sm">(282+ avaliações no Google)[cite: 1]</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+                <div class="text-amber-400 text-xs mb-3 flex gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-slate-300 text-sm mb-4">"Atendimento impecável! O fato de possuírem laboratório próprio agilizou demais a minha prótese. Excelente equipe em Cachoeirinha."</p>
+                <span class="text-xs font-semibold text-cyan-400">Paciente Verificado Google</span>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+                <div class="text-amber-400 text-xs mb-3 flex gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-slate-300 text-sm mb-4">"Estrutura moderna, ambiente climatizado e acessível. Trouxe meus pais idosos e meus filhos, e todos foram tratados com enorme carinho."</p>
+                <span class="text-xs font-semibold text-cyan-400">Paciente Verificado Google</span>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+                <div class="text-amber-400 text-xs mb-3 flex gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-slate-300 text-sm mb-4">"Simplesmente a melhor clínica odontológica da região. Atendimento humanizado e reabilitação estética perfeita."</p>
+                <span class="text-xs font-semibold text-cyan-400">Paciente Verificado Google</span>
             </div>
         </div>
     </section>
@@ -202,8 +263,8 @@
                         <span>(51) 3074-6501[cite: 1]</span>
                     </div>
                     <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-clock text-cyan-400 w-5"></i>
-                        <span>Segunda a Sábado em horário comercial</span>
+                        <i class="fa-solid fa-wheelchair text-cyan-400 w-5"></i>
+                        <span>Ambiente Seguro, Climatizado e com Acessibilidade</span>
                     </div>
                 </div>
             </div>
@@ -219,10 +280,10 @@
                 <div>
                     <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Tratamento de Interesse</label>
                     <select class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors">
+                        <option>Prótese & Reabilitação Oral</option>
                         <option>Implantes Dentários</option>
                         <option>Lentes de Contato Dental</option>
-                        <option>Ortodontia Estética</option>
-                        <option>Limpeza e Prevenção</option>
+                        <option>Atendimento Infantil / Familiar</option>
                     </select>
                 </div>
                 <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-cyan-500/20">
@@ -234,7 +295,7 @@
 
     <!-- FOOTER -->
     <footer class="border-t border-slate-800 py-12 px-6 text-center text-slate-500 text-sm">
-        <p>&copy; 2026 Sul Dental - Clínica Odontológica. Todos os direitos reservados. Cachoeirinha - RS[cite: 1].</p>
+        <p>&copy; 2026 Sul Dental - Clínica Odontológica. Seu Sorriso Nosso Compromisso! Cachoeirinha - RS[cite: 1].</p>
     </footer>
 
     <!-- SCRIPT DE CANVAS E GSAP SCROLLTRIGGER -->
