@@ -16,7 +16,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
 
-    <!-- NAVBAR COM ANCORAGEM RIGOROSA -->
+    <!-- NAVBAR COM ANCORAGEM RIGOROSA E LINK PARA O DOUTOR -->
     <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
@@ -24,6 +24,9 @@
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
                 <a href="#sobre" class="hover:text-cyan-400 transition-colors">Sobre</a>
+                <a href="doutor.html" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1.5">
+                    <i class="fa-solid fa-user-doctor"></i> Quem é o Doutor
+                </a>
                 <a href="#especialidades" class="hover:text-cyan-400 transition-colors">Especialidades</a>
                 <a href="#avaliacoes" class="hover:text-cyan-400 transition-colors">Avaliações (4.9★)</a>
                 <a href="#contacto" class="hover:text-cyan-400 transition-colors">Contacto</a>
@@ -76,6 +79,23 @@
                 <p class="text-slate-400 leading-relaxed mb-6">
                     Localizada na Av. Mal. Rondon, a Sul Dental destaca-se pelo atendimento humanizado, rigor científico e infraestrutura de ponta. Cada paciente recebe um plano personalizado para garantir conforto absoluto e resultados duradouros.
                 </p>
+                
+                <!-- CARD DE CHAMADA PARA A PÁGINA DO DOUTOR -->
+                <div class="bg-slate-900 border border-cyan-500/30 p-5 rounded-2xl mb-6 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl shrink-0">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Conheça o Responsável Técnico</h4>
+                            <p class="text-slate-400 text-xs">História, formação, valores e amor pela profissão.</p>
+                        </div>
+                    </div>
+                    <a href="doutor.html" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold px-4 py-2.5 rounded-xl transition-all shrink-0">
+                        Ver Página
+                    </a>
+                </div>
+
                 <div class="grid grid-cols-2 gap-6">
                     <div class="border-l-2 border-cyan-500 pl-4">
                         <span class="block text-3xl font-extrabold text-white">280+</span>
@@ -227,7 +247,6 @@
         const images = [];
         const frame = { frame: 0 };
         
-        // Carregamento assíncrono dos frames com fallback visual
         function preloadImages() {
             for (let i = 0; i < frameCount; i++) {
                 const img = new Image();
@@ -241,7 +260,6 @@
             context.clearRect(0, 0, canvas.width, canvas.height);
             const img = images[Math.round(frame.frame)];
             if (img && img.complete) {
-                // Desenhar com object-fit: cover simulado no canvas
                 const hRatio = canvas.width / img.width;
                 const vRatio = canvas.height / img.height;
                 const ratio = Math.max(hRatio, vRatio);
@@ -249,7 +267,6 @@
                 const centerShiftY = (canvas.height - img.height * ratio) / 2;
                 context.drawImage(img, 0, 0, img.width, img.height, centerShiftX, centerShiftY, img.width * ratio, img.height * ratio);
             } else {
-                // Fallback dinâmico caso os frames demorem a carregar
                 context.fillStyle = '#090d16';
                 context.fillRect(0, 0, canvas.width, canvas.height);
             }
@@ -265,7 +282,6 @@
         resizeCanvas();
         preloadImages();
 
-        // GSAP ScrollTrigger para scrub da sequência WebP
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.to(frame, {
