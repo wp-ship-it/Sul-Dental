@@ -16,15 +16,16 @@
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
 
-    <!-- NAVBAR COM ANCORAGEM RIGOROSA E LINK PARA O DOUTOR -->
+    <!-- NAVBAR COM O LINK VISÍVEL PARA A PÁGINA DO DOUTOR -->
     <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
                 <i class="fa-solid fa-tooth text-cyan-400"></i> Sul <span class="text-cyan-400">Dental</span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
                 <a href="#sobre" class="hover:text-cyan-400 transition-colors">Sobre</a>
-                <a href="doutor.html" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1.5">
+                <!-- Link destacado para a página do Doutor -->
+                <a href="doutor.html" class="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 px-4 py-2 rounded-full hover:bg-cyan-500/20 transition-all flex items-center gap-2">
                     <i class="fa-solid fa-user-doctor"></i> Quem é o Doutor
                 </a>
                 <a href="#especialidades" class="hover:text-cyan-400 transition-colors">Especialidades</a>
@@ -77,11 +78,11 @@
                     Compromisso com o seu bem-estar e saúde bucal em Cachoeirinha
                 </h2>
                 <p class="text-slate-400 leading-relaxed mb-6">
-                    Localizada na Av. Mal. Rondon, a Sul Dental destaca-se pelo atendimento humanizado, rigor científico e infraestrutura de ponta. Cada paciente recebe um plano personalizado para garantir conforto absoluto e resultados duradouros.
+                    Localizada na Av. Mal. Rondon[cite: 1], a Sul Dental destaca-se pelo atendimento humanizado, rigor científico e infraestrutura de ponta. Cada paciente recebe um plano personalizado para garantir conforto absoluto e resultados duradouros.
                 </p>
-                
-                <!-- CARD DE CHAMADA PARA A PÁGINA DO DOUTOR -->
-                <div class="bg-slate-900 border border-cyan-500/30 p-5 rounded-2xl mb-6 flex items-center justify-between">
+
+                <!-- CARD DE DESTAQUE PARA CONHECER O DOUTOR -->
+                <div class="bg-slate-900/90 border border-cyan-500/40 p-5 rounded-2xl mb-8 flex items-center justify-between shadow-lg shadow-cyan-500/5">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl shrink-0">
                             <i class="fa-solid fa-user-doctor"></i>
@@ -92,7 +93,7 @@
                         </div>
                     </div>
                     <a href="doutor.html" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold px-4 py-2.5 rounded-xl transition-all shrink-0">
-                        Ver Página
+                        Aceder &rarr;
                     </a>
                 </div>
 
